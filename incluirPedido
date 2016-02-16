@@ -1,0 +1,51 @@
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<title>pedidos</title>
+</head>
+<body>
+<?php
+include('menu.html');
+include_once 'conecta/conecta.php';
+$cli="SELECT idCliente, nome FROM Cliente";
+$cliente= mysql_query($cli);
+
+$prod="SELECT idProd, nome FROM Produto";
+$produtos= mysql_query($prod);
+?>
+<div class="container">
+<table>
+<form role="form" action="inserePedidos.php" method="POST">
+<div calss="form-group">
+<tr>
+<td><label for="cliente">Cliente: </label></td>
+<td><select name="cliente">
+<?php 
+while (mysql_fetch_row($cliente)){
+	echo '<option value="'.mysql_result($cliente, 'idClinete').'">'.mysql_result($cliente, 'nome').'</option>';
+}
+?>
+</select></td>
+</tr>
+</div>
+<div class="form-group">
+<tr>
+<td><label for="produto">Produto: </label></td>
+<td><select name="produto">
+<?php 
+while (mysql_fetch_row($produtos)){
+	echo '<option value="'.mysql_result($produtos, 'idProd').'">'.mysql_result($produtos, 'nome').'</option>';
+}
+?></select></td>
+</tr>
+</div>
+<div class="form-group">
+<input type="submit" class="btn btn-default" value="Enviar"/>
+</div>
+</form>
+</table>
+</div>
