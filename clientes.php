@@ -14,7 +14,6 @@ include('menu.html');
 include_once ('conecta/conecta.php');
 $query="SELECT * FROM Cliente ORDER BY nome";
 $result= mysql_query($query, $con);
-//$result= mysql_query($con, $query);
 ?>
 <div class="container">
 <div class="table-responsive">
