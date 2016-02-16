@@ -30,7 +30,7 @@ while(mysql_fetch_row($result)){
 	echo'<td>'.mysql_result($result, 'nome').'</td>';
 	echo'<td>'.mysql_result($result, 'telefone').'</td>';
 	echo'<td>'.mysql_result($result, 'email').'</td>';
-	echo '<button type="button" class="btn btn-danger" onclick="window.location.href='.'deletarCliente.php'.'">Deletar</button>';
+	echo '<button type="button" class="btn btn-danger" onclick="window.location.href='.'deletarCliente.php?id='.mysql_result($result, 'idCliente')'">Deletar</button>';
 }
 
 ?>
