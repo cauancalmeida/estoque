@@ -19,7 +19,6 @@ $result= mysql_query($query, $con);
 <div class="table-responsive">
 <table class="table">
 <thead>
-	<th>#</th>
 	<th>Nome</th>
 	<th>Telefone</th>
 	<th>Email</th>
