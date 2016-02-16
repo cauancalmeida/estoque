@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<title>clientes</title>
+<title>produtos</title>
 </head>
 <body>
 <?php
@@ -30,7 +30,7 @@ while(mysql_fetch_row($result)){
 	echo'<td>'.mysql_result($result, 'nome').'</td>';
 	echo'<td>'.mysql_result($result, 'preco').'</td>';
 	echo'<td>'.mysql_result($result, 'descricao').'</td>';
-	echo '<button type="button" class="btn btn-danger" onclick="window.location.href='.'deletarProduto.php'.'">Deletar</button>';
+	echo '<button type="button" class="btn btn-danger" onclick="window.location.href='.'deletarProduto.php?id='.mysql_result($result, 'idProd').'">Deletar</button>';
 }
 
 ?>
